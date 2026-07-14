@@ -3,17 +3,18 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import Navbar from './components/navbar/navbar'
+import Footer from './components/footer/footer'
+
+import Login from './components/login/login-page'
+import Register from './components/register/register-page'
+import AppRoutes from './routes/AppRoutes'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className="min-h-screen bg-slate-900 flex items-center justify-center">
-      <h1 className="text-5xl font-bold text-cyan-400">
-        Diamond Elite 
-      </h1>
-    </div>
+      <AppRoutes />
     </>
   )
 }
