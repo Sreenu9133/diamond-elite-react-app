@@ -23,7 +23,7 @@ function Login() {
                             <input type="password" name="" id="" className="border p-2 rounded-sm" />
                         </div>
 
-                        <Link to="" className="w-full flex items-center justify-center">
+                        <Link to="/home" className="w-full flex items-center justify-center">
                             <button className="rounded-lg bg-emerald-900 p-2 w-[70%] text-white hover:bg-transparent hover:border hover:border-emerald-900 hover:text-black">Verify Identity</button>
                         </Link>
 
