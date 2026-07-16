@@ -4,7 +4,7 @@ import Login from '../components/login/login-page';
 import Register from "../components/register/register-page";
 import Navbar from "../components/navbar/navbar"
 import { Outlet } from "react-router-dom";
-// import Home from "../components/home/home-page"
+import Home from "../components/home/home-page"
 
 function AppRoutes() {
     return (
@@ -15,11 +15,11 @@ function AppRoutes() {
                     <Outlet />
                 </>
             }>
-
                 <Route path="/" element={<Login />} />
                 <Route path="/register" element={<Register />}/>
                 <Route element={<MainLayout />}>
-                        {/* <Route path="/home" element={<Home />}/> */}
+                    <Route path="/home" element={<Home />}/>
+                    {/* <Route path="/" element={<Login/>} /> */}
                 </Route>
 
             </Route>

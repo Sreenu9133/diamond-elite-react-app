@@ -24,7 +24,9 @@ function NavBtns() {
                         <HiOutlineGlobeAsiaAustralia size={33} className="text-emerald-900" />
                         <p>En</p>
                     </div>
-                    <button className="rounded-lg bg-emerald-900 text-white py-2 px-5 hover:bg-transparent hover:text-black border border-emerald-900 ">Log Out</button>
+                    <Link to="/">
+                        <button className="rounded-lg bg-emerald-900 text-white py-2 px-5 hover:bg-transparent hover:text-black border border-emerald-900 ">Log Out</button>
+                    </Link>           
                 </>
             )}
 
