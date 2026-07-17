@@ -1,6 +1,6 @@
 function NavbarMarquee() {
     return (
-        <div className="navbar-marquee bg-black py-2 px-10 flex items-center overflow-hidden w-full relative">
+        <div className="navbar-marquee bg-black py-2 px-10 flex items-center overflow-hidden w-full relative max-[576px]:px-5 max-[576px]:py-3">
             <button className="bg-[#d4af37] rounded-lg text-white font-semibold px-4 py-2 text-center text-sm z-20 whitespace-nowrap">
                 Latest Notice
             </button>

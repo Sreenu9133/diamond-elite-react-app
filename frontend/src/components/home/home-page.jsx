@@ -13,7 +13,7 @@ function Home(){
             <StartMining />
             <HomeMembership />
             <LicenseComparision />
-            <HomeFAQ />
+            {/* <HomeFAQ /> */}
         </div>
     )
 }

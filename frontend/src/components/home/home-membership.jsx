@@ -5,16 +5,17 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 function Membership() {
     return (
         <div className="membership-section py-10">
-            <div className="membership-head flex flex-col items-center justify-center gap-1">
+            <div className="membership-head flex flex-col items-center justify-center gap-1 max-[576px]:p-5">
                 <p className="text-[#d4af37] font-semibold text-sm text-center">CHOOSE YOUR MEMBERSHIP PLANS</p>
                 <h1 className="font-semibold text-2xl text-center">High Yield Computational Mining Licenses</h1>
                 <p className="text-sm text-gray-500 text-center">Simple plan structures. Real-time compounding payouts. Backed by system node wallets.</p>
             </div>
 
-            <div className="membership-card p-10 flex items-center justify-between">
-                <div className="card border p-5 w-[30%] bg-white rounded-lg flex flex-col">
+            <div className="membership-card p-10 flex items-center justify-between max-[768px]:flex-col max-[768px]:gap-5 max-[576px]:p-5 max-[576px]:flex-col max-[576px]:w-full max-[576px]:gap-5">
+                
+                <div className="card border p-5 w-[32%] bg-white rounded-lg flex flex-col justify-between h-[85vh] max-[768px]:w-full max-[576px]:w-full">
                     <span className="flex items-center justify-between pb-5">
-                        <p className="px-2 py-1 bg-[#d4af37] rounded-xl w-[40%] text-center text-xs">MOST POPULAR</p>
+                        <p className="py-1 bg-[#d4af37] rounded-xl w-[50%] text-center text-xs max-[768px]:py-2">MOST POPULAR</p>
                         <IoDiamondOutline size={35} className="bg-[#f0fdf4] p-2 rounded-2xl shadow-2xl text-gray-500"/>
                     </span>
                     <h4 className="text-black font-semibold">Diamond Crystal</h4>
@@ -22,17 +23,17 @@ function Membership() {
 
                     <h1 className="flex items-center pt-5 text-2xl italic"><FaIndianRupeeSign /> 500</h1>
 
-                    <div className="terms flex items-center justify-between border-y mt-5 py-2 border-gray-400">
-                        <span className="flex flex-col gap-1 items-center">
-                            <h6 className="text-[10px]">CONTRACT TERM</h6>
+                    <div className="terms flex items-center justify-between border-y mt-5 py-2 border-gray-400 max-[880px]:flex-col max-[880px]:w-full max-[880px]:items-start max-[880px]:gap-3">
+                        <span className="flex flex-col gap-1 items-center max-[880px]:flex-row max-[880px]:items-center max-[880px]:justify-between max-[880px]:w-full">
+                            <h6 className="text-[10px] max-[880px]:text-sm">CONTRACT TERM</h6>
                             <h2 className="flex text-sm items-center">45 Days</h2>
                         </span>
-                        <span className="flex flex-col gap-1 items-center">
-                            <p className="text-[10px]">DAILY RETURN</p>
+                        <span className="flex flex-col gap-1 items-center max-[880px]:flex-row max-[880px]:items-center max-[880px]:justify-between max-[880px]:w-full">
+                            <p className="text-[10px] max-[880px]:text-sm">DAILY RETURN</p>
                             <h2 className="flex text-sm items-center"><FaIndianRupeeSign /> 50</h2>
                         </span>
-                        <span className="flex flex-col gap-1 items-center">
-                            <p className="text-[10px]">MAX RETURN</p>
+                        <span className="flex flex-col gap-1 items-center max-[880px]:flex-row max-[880px]:items-center max-[880px]:justify-between max-[880px]:w-full">
+                            <p className="text-[10px] max-[880px]:text-sm">MAX RETURN</p>
                             <h2 className="flex text-sm items-center"><FaIndianRupeeSign /> 2250</h2>
                         </span>                
                     </div>
@@ -43,9 +44,9 @@ function Membership() {
                     </button>
                 </div>
 
-                <div className="card border p-5 w-[30%] bg-white rounded-lg flex flex-col">
+                <div className="card border p-5 w-[32%] bg-white rounded-lg flex flex-col justify-between h-[85vh] max-[768px]:w-full max-[576px]:w-full">
                     <span className="flex items-center justify-between pb-5">
-                        <p className="px-2 py-1 bg-[#d4af37] rounded-xl w-[40%] text-center text-xs">HIGH HARVEST</p>
+                        <p className="py-1 bg-[#d4af37] rounded-xl w-[50%] text-center text-xs max-[768px]:py-2">HIGH HARVEST</p>
                         <IoDiamondOutline size={35} className="bg-[#f0fdf4] p-2 rounded-2xl shadow-2xl text-[#3b82f6]"/>
                     </span>
                     <h4 className="text-black font-semibold">Diamond Sapphire</h4>
@@ -53,17 +54,17 @@ function Membership() {
 
                     <h1 className="flex items-center pt-5 text-2xl italic"><FaIndianRupeeSign /> 850</h1>
 
-                    <div className="terms flex items-center justify-between border-y mt-5 py-2 border-gray-400">
-                        <span className="flex flex-col gap-1 items-center">
-                            <h6 className="text-[10px]">CONTRACT TERM</h6>
+                    <div className="terms flex items-center justify-between border-y mt-5 py-2 border-gray-400 max-[880px]:flex-col max-[880px]:w-full max-[880px]:items-start max-[880px]:gap-3">
+                        <span className="flex flex-col gap-1 items-center max-[880px]:flex-row max-[880px]:items-center max-[880px]:justify-between max-[880px]:w-full">
+                            <h6 className="text-[10px] max-[880px]:text-sm">CONTRACT TERM</h6>
                             <h2 className="flex text-sm items-center">37 Days</h2>
                         </span>
-                        <span className="flex flex-col gap-1 items-center">
-                            <p className="text-[10px]">DAILY RETURN</p>
+                        <span className="flex flex-col gap-1 items-center max-[880px]:flex-row max-[880px]:items-center max-[880px]:justify-between max-[880px]:w-full">
+                            <p className="text-[10px] max-[880px]:text-sm">DAILY RETURN</p>
                             <h2 className="flex text-sm items-center"><FaIndianRupeeSign /> 150</h2>
                         </span>
-                        <span className="flex flex-col gap-1 items-center">
-                            <p className="text-[10px]">MAX RETURN</p>
+                        <span className="flex flex-col gap-1 items-center max-[880px]:flex-row max-[880px]:items-center max-[880px]:justify-between max-[880px]:w-full">
+                            <p className="text-[10px] max-[880px]:text-sm">MAX RETURN</p>
                             <h2 className="flex text-sm items-center"><FaIndianRupeeSign /> 5550</h2>
                         </span>                
                     </div>
@@ -74,9 +75,9 @@ function Membership() {
                     </button>
                 </div>
 
-                <div className="card border p-5 w-[30%] bg-white rounded-lg flex flex-col">
+                <div className="card border p-5 w-[32%] bg-white rounded-lg flex flex-col justify-between h-[85vh] max-[768px]:w-full max-[576px]:w-full">
                     <span className="flex items-center justify-between pb-5">
-                        <p className="px-2 py-1 bg-[#d4af37] rounded-xl w-[40%] text-center text-xs">ELITE YIELD</p>
+                        <p className="py-1 bg-[#d4af37] rounded-xl w-[50%] text-center text-xs max-[768px]:py-2">ELITE YIELD</p>
                         <IoDiamondOutline size={35} className="bg-[#f0fdf4] p-2 rounded-2xl shadow-2xl text-[#10b981]"/>
                     </span>
                     <h4 className="text-black font-semibold">Diamond Emerald</h4>
@@ -84,17 +85,17 @@ function Membership() {
 
                     <h1 className="flex items-center pt-5 text-2xl italic"><FaIndianRupeeSign /> 2000</h1>
 
-                    <div className="terms flex items-center justify-between border-y mt-5 py-2 border-gray-400">
-                        <span className="flex flex-col gap-1 items-center">
-                            <h6 className="text-[10px]">CONTRACT TERM</h6>
+                    <div className="terms flex items-center justify-between border-y mt-5 py-2 border-gray-400 max-[880px]:flex-col max-[880px]:w-full max-[880px]:items-start max-[880px]:gap-3">
+                        <span className="flex flex-col gap-1 items-center max-[880px]:flex-row max-[880px]:items-center max-[880px]:justify-between max-[880px]:w-full">
+                            <h6 className="text-[10px] max-[880px]:text-sm">CONTRACT TERM</h6>
                             <h2 className="flex text-sm items-center"><FaIndianRupeeSign /> 37 Days</h2>
                         </span>
-                        <span className="flex flex-col gap-1 items-center">
-                            <p className="text-[10px]">DAILY RETURN</p>
+                        <span className="flex flex-col gap-1 items-center max-[880px]:flex-row max-[880px]:items-center max-[880px]:justify-between max-[880px]:w-full">
+                            <p className="text-[10px] max-[880px]:text-sm">DAILY RETURN</p>
                             <h2 className="flex text-sm items-center"><FaIndianRupeeSign /> 300</h2>
                         </span>
-                        <span className="flex flex-col gap-1 items-center">
-                            <p className="text-[10px]">MAX RETURN</p>
+                        <span className="flex flex-col gap-1 items-center max-[880px]:flex-row max-[880px]:items-center max-[880px]:justify-between max-[880px]:w-full">
+                            <p className="text-[10px] max-[880px]:text-sm">MAX RETURN</p>
                             <h2 className="flex text-sm items-center"><FaIndianRupeeSign /> 11100</h2>
                         </span>                
                     </div>
@@ -104,6 +105,7 @@ function Membership() {
                         <FaLongArrowAltRight size={20} className="text-[#d4af37]" />
                     </button>
                 </div>
+
             </div>
         </div>
     )
