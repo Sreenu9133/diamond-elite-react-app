@@ -5,6 +5,7 @@ import Register from "../components/register/register-page";
 import Navbar from "../components/navbar/navbar"
 import { Outlet } from "react-router-dom";
 import Home from "../components/home/home-page"
+import Products from "../components/products/products";
 
 function AppRoutes() {
     return (
@@ -20,6 +21,7 @@ function AppRoutes() {
                 <Route element={<MainLayout />}>
                     <Route path="/home" element={<Home />}/>
                     {/* <Route path="/" element={<Login/>} /> */}
+                    <Route path="/products" element={<Products />} />
                 </Route>
 
             </Route>

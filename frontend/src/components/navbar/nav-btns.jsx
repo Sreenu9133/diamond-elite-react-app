@@ -25,7 +25,7 @@ function NavBtns() {
 
     return (
         <div className="nav-container relative w-full">
-            <div className="nav-btns max-[576px]:hidden flex items-center justify-end gap-3 w-full">
+            <div className="nav-btns max-[768px]:hidden flex items-center justify-end gap-3 w-full">
                 {!isAuthPage && (
                     <>
                         <div className="relative inline-block cursor-pointer" onClick={() => setIsNotifOpen(!isNotifOpen)}>
@@ -65,7 +65,7 @@ function NavBtns() {
             </div>
 
             {isNotifOpen && !isAuthPage && (
-                <div className="max-[576px]:hidden absolute right-24 top-14 bg-white border border-emerald-900 shadow-xl rounded-xl p-4 w-full z-50 animate-fade-in">
+                <div className="max-[768px]:hidden absolute right-24 top-14 bg-white border border-emerald-900 shadow-xl rounded-xl p-4 w-full z-50 animate-fade-in">
                     <div className="flex justify-between items-center border-b pb-2 mb-2">
                         <h4 className="font-semibold text-emerald-900">Notifications</h4>
                         <span className="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-medium">
@@ -84,7 +84,7 @@ function NavBtns() {
                 </div>
             )}
 
-            <div className="min-[577px]:hidden flex items-center">
+            <div className="min-[768px]:hidden flex items-center justify-end">
                 <button 
                     onClick={() => {
                         setIsOpen(!isOpen);
@@ -97,7 +97,7 @@ function NavBtns() {
             </div>
 
             {isOpen && (
-                <div className="min-[577px]:hidden absolute right-0 top-12 bg-white border border-gray-200 shadow-lg rounded-lg p-4 flex flex-col gap-4 z-50 min-w-[220px]">
+                <div className="min-[768px]:hidden absolute right-0 top-12 bg-white border border-gray-200 shadow-lg rounded-lg p-4 flex flex-col gap-4 z-50 `min-w-[220px]`">
                     {!isAuthPage && (
                         <>
                             <div 

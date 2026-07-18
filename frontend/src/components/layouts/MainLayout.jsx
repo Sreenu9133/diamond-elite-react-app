@@ -7,7 +7,7 @@ function MainLayout(){
         <div className="flex flex-col min-h-screen bg-[f0f7ff]">
             {/* <Navbar /> */}
 
-            <main className="flex-grow pb-20 bg-[f0f7ff]">
+            <main className="`flex-grow` pb-20 bg-[f0f7ff]">
                 <Outlet />
             </main>
 
