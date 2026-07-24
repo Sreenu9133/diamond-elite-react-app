@@ -6,6 +6,8 @@ import Navbar from "../components/navbar/navbar"
 import { Outlet } from "react-router-dom";
 import Home from "../components/home/home-page"
 import Products from "../components/products/products";
+import Work from "../components/work/work";
+import Profile from "../components/profile/profile";
 
 function AppRoutes() {
     return (
@@ -22,6 +24,8 @@ function AppRoutes() {
                     <Route path="/home" element={<Home />}/>
                     {/* <Route path="/" element={<Login/>} /> */}
                     <Route path="/products" element={<Products />} />
+                    <Route path="/work" element = {< Work/>} />
+                    <Route path="/profile" element={<Profile />} />
                 </Route>
 
             </Route>

@@ -22,7 +22,7 @@ function Footer() {
                         <h1>Product</h1>
                     </div>
                 </Link>
-                <Link>
+                <Link to="/work">
                     <div className="work-container flex flex-col items-center">
                         <IoDiamond size={35} className="text-emerald-900" />
                         <h1>Work</h1>
@@ -34,7 +34,7 @@ function Footer() {
                         <h1>News</h1>
                     </div>
                 </Link>
-                <Link>
+                <Link to="/profile">
                     <div className="me-container flex flex-col items-center">
                         <IoMdPerson size={35} className="text-emerald-900" />
                         <h1>Me</h1>
@@ -58,7 +58,7 @@ function Footer() {
                         <h4>Product</h4>
                     </div>
                 </Link>
-                <Link>
+                <Link to="/work">
                     <div className="work-container flex flex-col items-center">
                         <IoDiamond size={20} className="text-emerald-900" />
                         <h4>Work</h4>
@@ -70,7 +70,7 @@ function Footer() {
                         <h4>News</h4>
                     </div>
                 </Link>
-                <Link>
+                <Link to="/profile">
                     <div className="me-container flex flex-col items-center">
                         <IoMdPerson size={20} className="text-emerald-900" />
                         <h4>Me</h4>
