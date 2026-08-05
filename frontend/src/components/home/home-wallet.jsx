@@ -8,6 +8,7 @@ import { LiaRupeeSignSolid } from "react-icons/lia";
 
 
 function HomeWallet() {
+    
     return (
         <div className="home-wallet w-full">
             <div className="wallet-card m-10 rounded-lg bg-white shadow-2xl p-7 flex flex-col gap-15 max-[576px]:m-5">

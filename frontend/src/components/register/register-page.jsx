@@ -1,66 +1,197 @@
+
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { MdPersonAddAlt1 } from "react-icons/md";
 import { CiLogin } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
-    return (
-        <div className="register-part w-full min-h-screen flex flex-col items-center justify-center bg-[#f0f7ff]">
-            <div className="register-form-page w-[90%] sm:w-[100%] md:w-[60%] lg:w-[45%] rounded-lg border-emerald-900 flex flex-col items-center py-10">
+  const [user, setUser] = useState({
+    name: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
+  });
+const navigate = useNavigate()
+  const handleChange = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-                <div className="register-top-part bg-emerald-900 w-full rounded-t-lg flex flex-col items-center gap-1 p-3">
-                    <MdPersonAddAlt1 size={40} className="text-white" />
-                    <h2 className="text-white">CREATE ELITE WALLET</h2>
-                    <h4 className="text-white text-sm">JOIN THE SMART INVESTMENT PLATFORM</h4>
-                </div>
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-                <div className="register-form w-full flex flex-col items-center gap-4 py-5 shadow-2xl rounded-b-lg">
-                    <div className="name-container flex flex-col w-[70%] gap-1">
-                        <label htmlFor="">Legal Full Name</label>
-                        <input type="text" className="border p-2 rounded-lg" />
-                    </div>
+    if (!user.name || !user.phone || !user.password || !user.confirmPassword) {
+      return alert("Please fill in all fields.");
+    }
 
-                    <div className="contact-container flex flex-col w-[70%] gap-1">
-                        <label htmlFor="">Mobile Contact Number</label>
-                        <input type="text" className="border p-2 rounded-lg" />
-                    </div>
+    if (user.password !== user.confirmPassword) {
+      return alert("Passwords do not match.");
+    }
 
-                    <div className="password-container flex flex-col w-[70%] gap-1">
-                        <label htmlFor="">Password</label>
-                        <input type="password" className="border p-2 rounded-lg" />
-                    </div>
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/register",
+        {
+          name: user.name,
+          phone: user.phone,
+          password: user.password,
+        }
+        
+      )
+          
+      alert(response.data.message);
 
-                    <div className="confirm-password-container flex flex-col w-[70%] gap-1">
-                        <label htmlFor="">Confirm Password</label>
-                        <input type="password" className="border p-2 rounded-lg" />
-                    </div>
+      setUser({
+        name: "",
+        phone: "",
+        password: "",
+        confirmPassword: "",
+        
+      });
+ navigate("/profile")
+    } catch (error) {
+      alert(
+        error.response?.data?.message || "Registration Failed"
+      );
+    }
+  };
 
-                    <div className="referral-container flex flex-col w-[70%] gap-1">
-                        <label htmlFor="">Referral Code(Optional)</label>
-                        <input type="text" className="border p-2 rounded-lg" />
-                    </div>
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-emerald-100 to-blue-100 flex items-center justify-center p-5">
 
-                    <Link to="/" className="w-[70%]">
-                        <button className="p-3 rounded-lg w-full bg-emerald-900 text-white hover:bg-transparent hover:text-black hover:border mt-3 flex items-center justify-center gap-1">
-                            <MdPersonAddAlt1 size={25} />
-                            Register Elite Wallet
-                        </button>
-                    </Link>
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden">
 
-                    <div className="already-have-account w-[70%] flex items-center justify-between">
-                        <p className="w-45%">Already Have a Account?</p>
-                        <Link to="/" className="w-[45%]">
-                            <button className="border p-3 rounded-lg text-black w-full hover:bg-emerald-900 hover:border-none hover:text-white flex items-center justify-center gap-1">
-                                <CiLogin size={25} />
-                                Login
-                            </button>
-                        </Link>
-                    </div>
-                </div>
-            </div>
+        {/* Header */}
+        <div className="bg-emerald-900 py-8 text-center">
 
+          <MdPersonAddAlt1
+            size={55}
+            className="mx-auto text-white"
+          />
+
+          <h1 className="text-3xl font-bold text-white mt-3">
+            Create Account
+          </h1>
+
+          <p className="text-emerald-100 mt-2">
+            Register to access your Elite Wallet
+          </p>
 
         </div>
-    )
+
+        {/* Form */}
+
+        <form
+          onSubmit={handleSubmit}
+          className="p-8 space-y-5"
+        >
+
+          {/* Name */}
+
+          <div>
+            <label className="font-semibold">
+              Full Name
+            </label>
+
+            <input
+              type="text"
+              name="name"
+              value={user.name}
+              onChange={handleChange}
+              placeholder="Enter your full name"
+              className="w-full mt-2 border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-700"
+            />
+          </div>
+
+          {/* Email */}
+
+          <div>
+            <label className="font-semibold">
+              Phone Number
+            </label>
+
+            <input
+              type="text"
+              name="phone"
+              value={user.phone}
+              onChange={handleChange}
+              placeholder="Enter your Phone Number"
+              className="w-full mt-2 border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-700"
+            />
+          </div>
+
+          {/* Password */}
+
+          <div>
+            <label className="font-semibold">
+              Password
+            </label>
+
+            <input
+              type="password"
+              name="password"
+              value={user.password}
+              onChange={handleChange}
+              placeholder="Create a password"
+              className="w-full mt-2 border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-700"
+            />
+          </div>
+
+          {/* Confirm Password */}
+
+          <div>
+            <label className="font-semibold">
+              Confirm Password
+            </label>
+
+            <input
+              type="password"
+              name="confirmPassword"
+              value={user.confirmPassword}
+              onChange={handleChange}
+              placeholder="Confirm your password"
+              className="w-full mt-2 border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-700"
+            />
+          </div>
+
+          {/* Register Button */}
+
+          <button
+            type="submit"
+            className="w-full bg-emerald-900 hover:bg-emerald-800 text-white py-3 rounded-lg font-semibold transition duration-300 flex justify-center items-center gap-2"
+          >
+            <MdPersonAddAlt1 size={22} />
+            Register
+          </button>
+
+          {/* Login */}
+
+          <div className="text-center pt-2">
+
+            <p className="text-gray-600">
+              Already have an account?
+            </p>
+
+            <Link
+              to="/login"
+              className="inline-flex items-center gap-2 text-emerald-700 font-semibold mt-2 hover:underline"
+            >
+              <CiLogin size={22} />
+              Login
+            </Link>
+          
+          </div>
+
+        </form>
+   
+      </div>
+
+    </div>
+  );
 }
 
-export default Register
+export default Register;
