@@ -9,3 +9,4 @@ const router = express.Router();
 router.get("/users", verifyAdmin, getAllUsers);
 
 export default router;
+

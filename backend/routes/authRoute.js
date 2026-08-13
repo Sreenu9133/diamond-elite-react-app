@@ -2,6 +2,7 @@ import express from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import db from "../config/db.js"
+import authMiddleware from "../middleware/authMiddleware.js";
 const router = express.Router();
 
 router.get("/users", (req, res) => {
@@ -137,7 +138,6 @@ router.post("/login", (req, res) => {
         const token = jwt.sign(
             {
                 id: user.id,
-                
                   role: user.role
             },
             process.env.JWT_SECRET,
@@ -161,11 +161,39 @@ router.post("/login", (req, res) => {
     });
 
 });
+router.get("/me", authMiddleware, (req, res) => {
+
+    const sql = `
+        SELECT id, name, phone, role
+        FROM users
+        WHERE id = ?
+    `;
+
+    db.query(sql, [req.userId], (error, result) => {
+
+        if (error) {
+            return res.status(500).json({
+                success: false,
+                message: error.message
+            });
+        }
+
+        if (result.length === 0) {
+            return res.status(404).json({
+                success: false,
+                message: "User not found"
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            user: result[0]
+        });
+    });
+
+});
 
 export default router;
-
-
-
 
 // import express from "express";
 // import bcrypt from "bcryptjs";
@@ -186,19 +214,6 @@ export default router;
   
 // })
 // export default router
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // const express = require("express");
